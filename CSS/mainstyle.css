@@ -1,0 +1,94 @@
+
+.flyoutMenu
+{
+	height:600px; 
+	width:250px;
+	background-color: #3F444A;
+	position: fixed;
+	margin-top: 1.5%;
+	z-index: 100;
+
+}
+
+.cellText
+{
+	text-align: center;
+}
+
+#backArrow
+{
+	margin-top: 140%;
+	float: right;
+}
+
+
+
+#map-canvas 
+{ 
+	margin-left: auto;
+	margin-right: auto;
+	height: 99%;
+	width: 100%;
+	position: absolute;
+
+}
+
+#map-canvas-tool 
+{ 
+	margin-left: auto;
+	margin-right: auto;
+	height: 450px;
+	width: 100%;
+
+}
+
+
+#markerSlider1
+{
+	position: fixed;
+}
+
+#dateShower
+{
+	vertical-align: top;
+}
+
+#green_circle
+{
+	margin-top: 10px;	
+	width: 35px;
+	height: 35px;
+	border-radius: 99px;
+	background-color: #51a351;
+	margin-right: 3px;
+	opacity: 0;
+}
+
+#red_circle
+{
+	margin-top: 10px;
+	width: 35px;
+	height: 35px;
+	border-radius: 99px;
+	background-color: #bd362f;
+	opacity: 0;
+}
+
+#blue_circle
+{
+	width: 35px;
+	height: 35px;
+	border-radius: 99px;
+	background-color: #2f96b4;
+	margin-right: 3px;
+	opacity: 0;
+}
+
+#yellow_circle
+{
+	width: 35px;
+	height: 35px;
+	border-radius: 99px;
+	background-color: #f89406;
+	opacity: 0;
+}
