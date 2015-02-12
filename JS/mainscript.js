@@ -34,7 +34,7 @@ $("#markerSlider1").bind("slider:changed", function() {
 
 function slideChanged() {
 
-    var currentLength = destinations1.length; 
+    var currentLength = destinations1.length;
     if(value >= destinations1.length)
     {
     while(value >= destinations1.length) {
@@ -51,13 +51,13 @@ function slideChanged() {
             destinations2.pop()
             destinations3.pop()
             destinations4.pop()
-        } 
+        }
     }
 }
 
 function initialize() {
 
-    mapOptions = 
+    mapOptions =
     {
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         center: new google.maps.LatLng(41.902277040963696, 12.5244140625),
@@ -76,11 +76,11 @@ function initialize() {
     pompey.polylineOptions;
     pompeyPolyline = new google.maps.Polyline(pompey.polylineOptions);
     pompeyPolyline.setMap(map);
-    
+
     ceasar.polylineOptions;
     ceasarPolyline = new google.maps.Polyline(ceasar.polylineOptions);
     ceasarPolyline.setMap(map);
-    
+
     polyLineOptions3 = {
         path: destinations3,
         strokeColor: '#4D70B8',
@@ -107,7 +107,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, "resize", function() {
  var center = map.getCenter();
 google.maps.event.trigger(map, "resize");
- map.setCenter(center); 
+ map.setCenter(center);
 });
 
 var menuShown = true
@@ -118,33 +118,34 @@ function showMenu()
     {
         document.getElementById("fMenu").style.opacity = "0";
         document.getElementById("fMenu").style.height = "0px";
-        document.getElementById("fMenu").style.width = "0px"; 
-        menuShown = false; 
+        document.getElementById("fMenu").style.width = "0px";
+        menuShown = false;
     }
     else
     {
         document.getElementById("fMenu").style.opacity = "1";
         document.getElementById("fMenu").style.height = "600px";
         document.getElementById("fMenu").style.width = "250px";
-        menuShown = true;  
+        menuShown = true;
     }
 
 }
 
-function cellClicked(cellID, polylineID, color)
+function cellClicked(cellID, colorActive, polylineID, color)
 {
     var cell = document.getElementById(cellID);
-    if(cell.active == 'false')
+    var colorActive = cell.getAttribute("colorActive");
+    if(colorActive == 'false')
     {
         cell.className = color;
-        cell.active = 'true';
+        colorActive = 'true';
         polylineID.setOptions({strokeOpacity:1.0});
     }
 
-    else if (cell.active == 'true') 
+    else if (colorActive == 'true')
     {
         cell.className = 'active';
-        cell.active = 'false';
+        colorActive = 'false';
         polylineID.setOptions({strokeOpacity:0});
     }
 }
@@ -154,7 +155,7 @@ function cellClicked(cellID, polylineID, color)
 function pompeyCellClicked()
 {
     console.log("pompeyCell clicked");
-    
+
     if(pCellActive  == false)
     {
         var pompeyCell = document.getElementById("pompeyCell");
@@ -163,21 +164,21 @@ function pompeyCellClicked()
         pCellActive = true;
     }
 
-    else 
+    else
     {
         var pompeyCell = document.getElementById("pompeyCell");
         pompeyCell.className = 'active';
         pompeyLine.setOptions({strokeOpacity:0});
         pCellActive = false;
     }
-    writeSentence1();  
+    writeSentence1();
 }
 
 var cCellActive = false;
 function ceasarCellClicked()
 {
     console.log("ceasar clicked");
-    
+
     if(cCellActive  == false)
     {
         var ceasarCell = document.getElementById("ceasarCell");
@@ -186,21 +187,21 @@ function ceasarCellClicked()
         cCellActive = true;
     }
 
-    else 
+    else
     {
         var ceasarCell = document.getElementById("ceasarCell");
         ceasarCell.className = 'active';
         ceasarpolyLine.setOptions({strokeOpacity:0});
         cCellActive = false;
-    } 
-    writeSentence2(); 
+    }
+    writeSentence2();
 }
 
 var aCellActive = false;
 function augustusCellClicked()
 {
     console.log("augustusCellClicked");
-    
+
     if(aCellActive  == false)
     {
         var augustusCell = document.getElementById("augustusCell");
@@ -209,21 +210,21 @@ function augustusCellClicked()
         aCellActive = true;
     }
 
-    else 
+    else
     {
         var augustusCell = document.getElementById("augustusCell");
         augustusCell.className = 'active';
         polyLine3.setOptions({strokeOpacity:0});
         aCellActive = false;
     }
-    writeSentence3();  
+    writeSentence3();
 }
 
 var tCellActive = false;
 function tiberiusCellClicked()
 {
     console.log("tiberiusCellClicked");
-    
+
     if(tCellActive  == false)
     {
         var tiberiusCell = document.getElementById("tiberiusCell");
@@ -232,13 +233,13 @@ function tiberiusCellClicked()
         tCellActive = true;
     }
 
-    else 
+    else
     {
         var tiberiusCell = document.getElementById("tiberiusCell");
         tiberiusCell.className = 'active';
         polyLine4.setOptions({strokeOpacity:0});
         tCellActive = false;
-    } 
-    writeSentence4(); 
+    }
+    writeSentence4();
 }
 */
