@@ -73,13 +73,21 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    pompey.polylineOptions;
-    pompeyPolyline = new google.maps.Polyline(pompey.polylineOptions);
+    for (emperor in emperorArray)
+    {
+            emperorArray[emperor].Polyline = new google.maps.Polyline(emperorArray[emperor].polylineOptions);
+            emperorArray[emperor].Polyline.setMap(map);
+    }
+    
+
+/*    pompeyPolyline = new google.maps.Polyline(pompey.polylineOptions);
     pompeyPolyline.setMap(map);
+    pompey.Polyline = pompeyPolyline;
+
 
     ceasar.polylineOptions;
     ceasarPolyline = new google.maps.Polyline(ceasar.polylineOptions);
-    ceasarPolyline.setMap(map);
+    ceasarPolyline.setMap(map);*/
 
     polyLineOptions3 = {
         path: destinations3,
@@ -131,22 +139,24 @@ function showMenu()
 
 }
 
-function cellClicked(cellID, colorActive, polylineID, color)
+function cellClicked(element)
 {
-    var cell = document.getElementById(cellID);
-    var colorActive = cell.getAttribute("colorActive");
+
+    var emperorName = element.getAttribute("name");
+    console.log(emperorArray[emperorName].firstName);
+    var colorActive = element.getAttribute("colorActive");
     if(colorActive == 'false')
     {
-        cell.className = color;
-        colorActive = 'true';
-        polylineID.setOptions({strokeOpacity:1.0});
+        element.className = emperorArray[emperorName].color;
+        element.setAttribute("colorActive", "true");
+        emperorArray[emperorName].Polyline.setOptions({strokeOpacity:1.0});
     }
 
     else if (colorActive == 'true')
     {
-        cell.className = 'active';
-        colorActive = 'false';
-        polylineID.setOptions({strokeOpacity:0});
+        element.className = 'active'
+        element.setAttribute("colorActive", "false");
+        emperorArray[emperorName].Polyline.setOptions({strokeOpacity:0});
     }
 }
 

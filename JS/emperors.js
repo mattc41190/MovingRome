@@ -1,3 +1,4 @@
+
 //POMPEY
 
 var destinations1 = new google.maps.MVCArray();
@@ -7,8 +8,8 @@ var pompeyData = [];
 getPompeyData(pompeyData)
 getPompeyLocations(pompeyLocations)
 var pompey = {
-	firstname: "Gneaus", 
-	lastname: "Pompey", 
+	firstName: "Gneaus", 
+	lastName: "Pompey", 
 	times: dates,
 	color: "success", 
 	data: pompeyData,
@@ -16,7 +17,7 @@ var pompey = {
 	{
        path: destinations1,
        strokeColor: '#51A351',
-       strokeOpacity: 0
+       strokeOpacity: 1
     },
 	locations:pompeyLocations
 } 
@@ -29,8 +30,8 @@ var ceasarData = [];
 getCeasarData(ceasarData)
 getCeasarLocations(ceasarLocations)
 var ceasar = {
-	firstname: "Julius", 
-	lastname: "Ceasar", 
+	firstName: "Julius", 
+	lastName: "Ceasar", 
 	times: dates,
 	color: "danger", 
 	data: ceasarData,
@@ -42,3 +43,11 @@ var ceasar = {
     },
 	locations: ceasarLocations
 } 
+
+
+var emperorArray = 
+{
+	"Pompey": pompey,
+	"Ceasar": ceasar
+}
+
