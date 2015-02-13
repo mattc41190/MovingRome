@@ -265,99 +265,106 @@ null
 ,"data 4 index21"
 ]
 
-writeSentences()
+function writeSentences()
 {
 	for (emperor in emperorArray)
 	{
-		if (emperorArray[emperor].active == false || emperorArray[emperor].data[value] == null)
+		var sentence = emperorArray[emperor].data[value]
+		if (emperorArray[emperor].active == false || sentence  == null)
 		{
-			//hide circles meeting this criteria
+			document.getElementById("dynamicText1").innerHTML = '';
+			document.getElementById("green_circle").style.opacity = "0";
+			document.getElementById("green_circle").style.height = "0px";
+			document.getElementById("green_circle").style.width = "0px";
 		}
 
 		else
 		{
-			// show circles meeting this criteria 
+			document.getElementById("dynamicText1").innerHTML = sentence;
+			document.getElementById("green_circle").style.opacity = "1";
+			document.getElementById("green_circle").style.height = "35px";
+			document.getElementById("green_circle").style.width = "35px";
 		}
 	}
 }
 
-		function writeSentence1()
-		{
-			sentence1 = pompeyData[value];
-			if (sentence1 == null || pCellActive == false)
-			{
-				document.getElementById("dynamicText1").innerHTML = '';
-				document.getElementById("green_circle").style.opacity = "0";
-				document.getElementById("green_circle").style.height = "0px";
-				document.getElementById("green_circle").style.width = "0px";
-
-			}
-			else if (pCellActive = true)
-			{
-				document.getElementById("dynamicText1").innerHTML = sentence1;
-				document.getElementById("green_circle").style.opacity = "1";
-				document.getElementById("green_circle").style.height = "35px";
-				document.getElementById("green_circle").style.width = "35px";
-
-			}
-		}
-		function writeSentence2()
-		{
-			var sentence2 = ceasarData[value]
-			if (sentence2== null || cCellActive == false)
-			{
-				document.getElementById("dynamicText2").innerHTML = '';
-				document.getElementById("red_circle").style.opacity = "0";
-				document.getElementById("red_circle").style.height = "0px";
-				document.getElementById("red_circle").style.width = "0px";
-
-			}
-			else if (cCellActive = true)
-			{
-				document.getElementById("dynamicText2").innerHTML = sentence2;
-				document.getElementById("red_circle").style.opacity = "1";
-				document.getElementById("red_circle").style.height = "35px";
-				document.getElementById("red_circle").style.width = "35px";
-
-			}
-		}
-		function writeSentence3()
-		{
-			var sentence3 = data3[value]
-			if (sentence3 == null || aCellActive == false)
-			{
-				document.getElementById("dynamicText3").innerHTML = '';
-				document.getElementById("blue_circle").style.opacity = "0";
-				document.getElementById("blue_circle").style.height = "0px";
-				document.getElementById("blue_circle").style.width = "0px";
-
-			}
-			else if (aCellActive = true)
-			{
-				document.getElementById("dynamicText3").innerHTML = sentence3;
-				document.getElementById("blue_circle").style.opacity = "1";
-				document.getElementById("blue_circle").style.height = "35px";
-				document.getElementById("blue_circle").style.width = "35px";
-
-			}
-		}
-		function writeSentence4()
-		{
-			var sentence4 = data4[value]
-			if (sentence4== null || tCellActive == false)
-			{
-				document.getElementById("dynamicText4").innerHTML = '';
-				document.getElementById("yellow_circle").style.opacity = "0";
-				document.getElementById("yellow_circle").style.height = "0px";
-				document.getElementById("yellow_circle").style.width = "0px";
-
-			}
-			else if (tCellActive = true)
-			{
-				document.getElementById("dynamicText4").innerHTML = sentence4;
-				document.getElementById("yellow_circle").style.opacity = "1";
-				document.getElementById("yellow_circle").style.height = "35px";
-				document.getElementById("yellow_circle").style.width = "35px";
-
-			}
-		}
+		// function writeSentence1()
+		// {
+		// 	sentence1 = pompeyData[value];
+		// 	if (sentence1 == null || pCellActive == false)
+		// 	{
+		// 		document.getElementById("dynamicText1").innerHTML = '';
+		// 		document.getElementById("green_circle").style.opacity = "0";
+		// 		document.getElementById("green_circle").style.height = "0px";
+		// 		document.getElementById("green_circle").style.width = "0px";
+		//
+		// 	}
+		// 	else if (pCellActive = true)
+		// 	{
+		// 		document.getElementById("dynamicText1").innerHTML = sentence1;
+		// 		document.getElementById("green_circle").style.opacity = "1";
+		// 		document.getElementById("green_circle").style.height = "35px";
+		// 		document.getElementById("green_circle").style.width = "35px";
+		//
+		// 	}
+		// }
+		// function writeSentence2()
+		// {
+		// 	var sentence2 = ceasarData[value]
+		// 	if (sentence2== null || cCellActive == false)
+		// 	{
+		// 		document.getElementById("dynamicText2").innerHTML = '';
+		// 		document.getElementById("red_circle").style.opacity = "0";
+		// 		document.getElementById("red_circle").style.height = "0px";
+		// 		document.getElementById("red_circle").style.width = "0px";
+		//
+		// 	}
+		// 	else if (cCellActive = true)
+		// 	{
+		// 		document.getElementById("dynamicText2").innerHTML = sentence2;
+		// 		document.getElementById("red_circle").style.opacity = "1";
+		// 		document.getElementById("red_circle").style.height = "35px";
+		// 		document.getElementById("red_circle").style.width = "35px";
+		//
+		// 	}
+		// }
+		// function writeSentence3()
+		// {
+		// 	var sentence3 = data3[value]
+		// 	if (sentence3 == null || aCellActive == false)
+		// 	{
+		// 		document.getElementById("dynamicText3").innerHTML = '';
+		// 		document.getElementById("blue_circle").style.opacity = "0";
+		// 		document.getElementById("blue_circle").style.height = "0px";
+		// 		document.getElementById("blue_circle").style.width = "0px";
+		//
+		// 	}
+		// 	else if (aCellActive = true)
+		// 	{
+		// 		document.getElementById("dynamicText3").innerHTML = sentence3;
+		// 		document.getElementById("blue_circle").style.opacity = "1";
+		// 		document.getElementById("blue_circle").style.height = "35px";
+		// 		document.getElementById("blue_circle").style.width = "35px";
+		//
+		// 	}
+		// }
+		// function writeSentence4()
+		// {
+		// 	var sentence4 = data4[value]
+		// 	if (sentence4== null || tCellActive == false)
+		// 	{
+		// 		document.getElementById("dynamicText4").innerHTML = '';
+		// 		document.getElementById("yellow_circle").style.opacity = "0";
+		// 		document.getElementById("yellow_circle").style.height = "0px";
+		// 		document.getElementById("yellow_circle").style.width = "0px";
+		//
+		// 	}
+		// 	else if (tCellActive = true)
+		// 	{
+		// 		document.getElementById("dynamicText4").innerHTML = sentence4;
+		// 		document.getElementById("yellow_circle").style.opacity = "1";
+		// 		document.getElementById("yellow_circle").style.height = "35px";
+		// 		document.getElementById("yellow_circle").style.width = "35px";
+		//
+		// 	}
+		// }

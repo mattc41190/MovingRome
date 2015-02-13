@@ -21,13 +21,9 @@ $(document).ready(function() {
 
 $("#markerSlider1").bind("slider:changed", function() {
     value = this.value;
-    console.log("The current slider value is: " + value)
     document.getElementById("dateShower").innerHTML = dates[value];
     slideChanged();
-    writeSentence1();
-    writeSentence2();
-    writeSentence3();
-    writeSentence4();
+    writeSentences();
 });
 
 function slideChanged() {
@@ -132,21 +128,20 @@ function cellClicked(element)
 {
 
     var emperorName = element.getAttribute("name");
-    console.log(pompey.data[0]);
-    var colorActive = element.getAttribute("colorActive");
-    if(colorActive == 'false')
+    console.log(emperorName);
+    var colorActive = emperorArray[emperorName].active;
+    if(colorActive == false)
     {
         element.className = emperorArray[emperorName].color;
-        element.setAttribute("colorActive", "true");
-        emperorArray[emperorName].active = false;
+        emperorArray[emperorName].active = true;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:1.0});
     }
 
-    else if (colorActive == 'true')
+    else if (colorActive == true)
     {
         element.className = 'active'
-        element.setAttribute("colorActive", "false");
-        emperorArray[emperorName].active = true;
+        emperorArray[emperorName].color
+        emperorArray[emperorName].active = false;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:0});
     }
 }
