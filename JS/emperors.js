@@ -8,19 +8,20 @@ var pompeyData = [];
 getPompeyData(pompeyData)
 getPompeyLocations(pompeyLocations)
 var pompey = {
-	firstName: "Gneaus", 
-	lastName: "Pompey", 
+	firstName: "Gneaus",
+	lastName: "Pompey",
 	times: dates,
-	color: "success", 
+	color: "success",
+	active: false,  
 	data: pompeyData,
-	polylineOptions: polyLineOptions1 = 
+	polylineOptions: polyLineOptions1 =
 	{
        path: destinations1,
        strokeColor: '#51A351',
        strokeOpacity: 1
     },
 	locations:pompeyLocations
-} 
+}
 
 //CEASAR
 
@@ -30,24 +31,24 @@ var ceasarData = [];
 getCeasarData(ceasarData)
 getCeasarLocations(ceasarLocations)
 var ceasar = {
-	firstName: "Julius", 
-	lastName: "Ceasar", 
+	firstName: "Julius",
+	lastName: "Ceasar",
 	times: dates,
-	color: "danger", 
+	color: "danger",
+	active: false,
 	data: ceasarData,
-	polylineOptions: polyLineOptions2 = 
+	polylineOptions: polyLineOptions2 =
 	{
        path: destinations2,
        strokeColor: '#BD362F',
        strokeOpacity: 0
     },
 	locations: ceasarLocations
-} 
+}
 
 
-var emperorArray = 
+var emperorArray =
 {
 	"Pompey": pompey,
 	"Ceasar": ceasar
 }
-

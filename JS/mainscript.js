@@ -1,8 +1,6 @@
 var map, mapOptions;
 var destinations3 = new google.maps.MVCArray();
 var destinations4 = new google.maps.MVCArray();
-var pompeyLine
-var ceasarpolyLine
 var polyLine3, polyLineOptions3;
 var polyLine4, polyLineOption4;
 var value;
@@ -78,16 +76,7 @@ function initialize() {
             emperorArray[emperor].Polyline = new google.maps.Polyline(emperorArray[emperor].polylineOptions);
             emperorArray[emperor].Polyline.setMap(map);
     }
-    
 
-/*    pompeyPolyline = new google.maps.Polyline(pompey.polylineOptions);
-    pompeyPolyline.setMap(map);
-    pompey.Polyline = pompeyPolyline;
-
-
-    ceasar.polylineOptions;
-    ceasarPolyline = new google.maps.Polyline(ceasar.polylineOptions);
-    ceasarPolyline.setMap(map);*/
 
     polyLineOptions3 = {
         path: destinations3,
@@ -143,12 +132,13 @@ function cellClicked(element)
 {
 
     var emperorName = element.getAttribute("name");
-    console.log(emperorArray[emperorName].firstName);
+    console.log(pompey.data[0]);
     var colorActive = element.getAttribute("colorActive");
     if(colorActive == 'false')
     {
         element.className = emperorArray[emperorName].color;
         element.setAttribute("colorActive", "true");
+        emperorArray[emperorName].active = false;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:1.0});
     }
 
@@ -156,100 +146,7 @@ function cellClicked(element)
     {
         element.className = 'active'
         element.setAttribute("colorActive", "false");
+        emperorArray[emperorName].active = true;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:0});
     }
 }
-
-
-/*var pCellActive = false;
-function pompeyCellClicked()
-{
-    console.log("pompeyCell clicked");
-
-    if(pCellActive  == false)
-    {
-        var pompeyCell = document.getElementById("pompeyCell");
-        pompeyCell.className = pompey.color;
-        pompeyLine.setOptions({strokeOpacity:1.0});
-        pCellActive = true;
-    }
-
-    else
-    {
-        var pompeyCell = document.getElementById("pompeyCell");
-        pompeyCell.className = 'active';
-        pompeyLine.setOptions({strokeOpacity:0});
-        pCellActive = false;
-    }
-    writeSentence1();
-}
-
-var cCellActive = false;
-function ceasarCellClicked()
-{
-    console.log("ceasar clicked");
-
-    if(cCellActive  == false)
-    {
-        var ceasarCell = document.getElementById("ceasarCell");
-        ceasarCell.className = ceasar.color;
-        ceasarpolyLine.setOptions({strokeOpacity:1.0});
-        cCellActive = true;
-    }
-
-    else
-    {
-        var ceasarCell = document.getElementById("ceasarCell");
-        ceasarCell.className = 'active';
-        ceasarpolyLine.setOptions({strokeOpacity:0});
-        cCellActive = false;
-    }
-    writeSentence2();
-}
-
-var aCellActive = false;
-function augustusCellClicked()
-{
-    console.log("augustusCellClicked");
-
-    if(aCellActive  == false)
-    {
-        var augustusCell = document.getElementById("augustusCell");
-        augustusCell.className = 'info';
-        polyLine3.setOptions({strokeOpacity:1.0});
-        aCellActive = true;
-    }
-
-    else
-    {
-        var augustusCell = document.getElementById("augustusCell");
-        augustusCell.className = 'active';
-        polyLine3.setOptions({strokeOpacity:0});
-        aCellActive = false;
-    }
-    writeSentence3();
-}
-
-var tCellActive = false;
-function tiberiusCellClicked()
-{
-    console.log("tiberiusCellClicked");
-
-    if(tCellActive  == false)
-    {
-        var tiberiusCell = document.getElementById("tiberiusCell");
-        tiberiusCell.className = 'warning';
-        polyLine4.setOptions({strokeOpacity:1.0});
-        tCellActive = true;
-    }
-
-    else
-    {
-        var tiberiusCell = document.getElementById("tiberiusCell");
-        tiberiusCell.className = 'active';
-        polyLine4.setOptions({strokeOpacity:0});
-        tCellActive = false;
-    }
-    writeSentence4();
-}
-*/
