@@ -265,7 +265,7 @@ null
 ,"data 4 index21"
 ]
 
-function writeSentences()
+function writeSentences(value)
 {
 	for (emperor in emperorArray)
 	{
