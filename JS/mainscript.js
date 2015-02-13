@@ -23,7 +23,7 @@ $("#markerSlider1").bind("slider:changed", function() {
     value = this.value;
     document.getElementById("dateShower").innerHTML = dates[value];
     slideChanged();
-    writeSentences();
+    writeSentences(value);
 });
 
 function slideChanged() {
