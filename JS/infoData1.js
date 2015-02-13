@@ -1,10 +1,10 @@
 function getPompeyData(pompeyData)
 {
-	pompeyData.push(null)// 01/08
-	pompeyData.push(null)
-	pompeyData.push(null) // 01/10 Rubicon
-	pompeyData.push(null)
-	pompeyData.push(null)
+	pompeyData.push("HIChris")// 01/08
+	pompeyData.push("HIChris")
+	pompeyData.push("HIChris") // 01/10 Rubicon
+	pompeyData.push("HIChris")
+	pompeyData.push("HIChris")
 	pompeyData.push(null)
 	pompeyData.push(null)
 	pompeyData.push(null)
@@ -33,19 +33,18 @@ function getPompeyData(pompeyData)
 	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.") //
 	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
 	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)
-	pompeyData.push(null)//
-	pompeyData.push(null)
-	pompeyData.push(null) //
-	pompeyData.push(null)
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.") //
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.") //
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.") //
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
+	pompeyData.push("Pompey and the senate flea from Rome. Leaving it entirely at the mercy of Ceasar.")
 	pompeyData.push(null)
 	pompeyData.push(null)
 	pompeyData.push(null)
@@ -269,21 +268,21 @@ function writeSentences(value)
 {
 	for (emperor in emperorArray)
 	{
+		var
 		var sentence = emperorArray[emperor].data[value]
+
 		if (emperorArray[emperor].active == false || sentence  == null)
 		{
 			document.getElementById("dynamicText1").innerHTML = '';
-			document.getElementById("green_circle").style.opacity = "0";
-			document.getElementById("green_circle").style.height = "0px";
-			document.getElementById("green_circle").style.width = "0px";
+			document.getElementById("green_circle").style.visible = "hidden";
 		}
 
-		else
+		else if (emperorArray[emperor].active == true)
 		{
+			console.log('A circle should be here');
+			console.log(sentence);
 			document.getElementById("dynamicText1").innerHTML = sentence;
-			document.getElementById("green_circle").style.opacity = "1";
-			document.getElementById("green_circle").style.height = "35px";
-			document.getElementById("green_circle").style.width = "35px";
+			document.getElementById("green_circle").style.visible = "visible";
 		}
 	}
 }

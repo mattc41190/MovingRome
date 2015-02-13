@@ -1,4 +1,12 @@
 
+#test
+{
+	background-color: purple;
+	height: 30px;
+	width: 30;
+	opacity: 0;
+}
+
 .flyoutMenu
 {
 	height:600px; 
@@ -61,7 +69,7 @@
 	border-radius: 99px;
 	background-color: #51a351;
 	margin-right: 3px;
-	opacity: 0;
+
 }
 
 #red_circle
@@ -71,7 +79,7 @@
 	height: 35px;
 	border-radius: 99px;
 	background-color: #bd362f;
-	opacity: 0;
+
 }
 
 #blue_circle
@@ -81,7 +89,7 @@
 	border-radius: 99px;
 	background-color: #2f96b4;
 	margin-right: 3px;
-	opacity: 0;
+
 }
 
 #yellow_circle
@@ -90,5 +98,5 @@
 	height: 35px;
 	border-radius: 99px;
 	background-color: #f89406;
-	opacity: 0;
+
 }

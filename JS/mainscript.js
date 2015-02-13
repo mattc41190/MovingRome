@@ -3,16 +3,13 @@ var destinations3 = new google.maps.MVCArray();
 var destinations4 = new google.maps.MVCArray();
 var polyLine3, polyLineOptions3;
 var polyLine4, polyLineOption4;
-var value;
 
 var plots3 = [];
 var tiberius = [];
 
 $(document).ready(function() {
     console.log("document is ready");
-    value = 0;
     document.getElementById("dateShower").innerHTML = dates[0];
-    console.log("The current slider value is: " + value)
     destinations1.push(pompey.locations[0]);
     destinations2.push(ceasar.locations[0]);
     destinations3.push(plots3[0]);
@@ -20,13 +17,13 @@ $(document).ready(function() {
 });
 
 $("#markerSlider1").bind("slider:changed", function() {
-    value = this.value;
+    var value = this.value;
     document.getElementById("dateShower").innerHTML = dates[value];
-    slideChanged();
+    slideChanged(value);
     writeSentences(value);
 });
 
-function slideChanged() {
+function slideChanged(value) {
 
     var currentLength = destinations1.length;
     if(value >= destinations1.length)
