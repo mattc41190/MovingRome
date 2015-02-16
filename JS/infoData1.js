@@ -270,6 +270,7 @@ function writeSentences()
 	for (emperor in emperorArray)
 	{
 		var sentence = emperorArray[emperor].data[value]
+		console.log(sentence);
 		if (emperorArray[emperor].active == false || sentence  == null)
 		{
 			document.getElementById("dynamicText1").innerHTML = '';
