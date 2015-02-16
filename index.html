@@ -7,64 +7,16 @@
 <link rel="stylesheet" type="text/css" href="./CSS/mainstyle.css">
 </head>
 <body>
-<div class="modal fade" id="myModal1">
+<div class="modal" id="myModal1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalTitle">Pompey</h4>
+        <h4 class="modal-title" id="modalTitle"></h4>
       </div>
       <div class="modal-body">
-        <div id='dynamicText1'></div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="myModal2">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Gaius Julius Ceasar</h4>
-      </div>
-      <div class="modal-body">
-        <div id='dynamicText2'></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="myModal3">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Augustus</h4>
-      </div>
-      <div class="modal-body">
-        <div id='dynamicText3'></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="myModal4">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Tiberius</h4>
-      </div>
-      <div class="modal-body">
-        <div id='dynamicText4'></div>
+        <h5>Most Recent Info: </h5>
+        <div id='dynamicText'></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -78,11 +30,10 @@
       <a class="navbar-brand" href="#">
         <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./supportingFiles/menu.png"/></div>
       </a>
-        <div class='col-md-1 col-xs-1' emperorName='Pompey' id="green_circle" data-toggle="modal" data-target="#myModal1">&nbsp;</div>
-        <div class='col-md-1 col-xs-1' emperorName='Ceasar'  id="red_circle" data-toggle="modal" data-target="#myModal2">&nbsp;</div>
-        <div class='col-md-1 col-xs-1' emperorName='Augustus' id="blue_circle" data-toggle="modal" data-target="#myModal3">&nbsp;</div>
-        <div class='col-md-1 col-xs-1' emperorName='Tiberius'  id="yellow_circle" data-toggle="modal" data-target="#myModal4">&nbsp;</div>
-        <div id='test'></div>
+        <button disabled  class="col-md-2 btn btn-success" name='Pompey'   id="green_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 btn btn-danger" name='Ceasar'    id="red_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 btn btn-info" name='Augustus'    id="blue_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 btn btn-warning" name='Tiberius' id="yellow_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
     </div>
 
             <ul class="nav navbar-nav navbar-right">
@@ -99,10 +50,10 @@
     </table>
     <table class="table">
     <table class="table table-hover">
-      <tr class="active" colorActive='false' name="Pompey" id="pompeyCell" onclick="cellClicked(this)"><td class="cellText">Pompey</td></tr>
-      <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell"onclick="cellClicked(this)"> <td class="cellText"   >Ceasar</td></tr>
-      <tr class="active" colorActive='false' name="Augustus" id="augustusCell"onclick="cellClicked(this)"><td class="cellText" >Augustus</td></tr>
-      <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell"onclick="cellClicked(this)"><td class="cellText" >Tiberius</td></tr>
+      <tr class="active" colorActive='false' name="Pompey" id="pompeyCell"    onclick="cellClicked(this,'green_circle')"><td class="cellText">Pompey</td></tr>
+      <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell"    onclick="cellClicked(this,'red_circle')"> <td class="cellText"   >Ceasar</td></tr>
+      <tr class="active" colorActive='false' name="Augustus" id="augustusCell"onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
+      <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell"onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
     </table>
   <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
 </div>

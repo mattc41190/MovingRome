@@ -3,9 +3,9 @@ var destinations3 = new google.maps.MVCArray();
 var destinations4 = new google.maps.MVCArray();
 var polyLine3, polyLineOptions3;
 var polyLine4, polyLineOption4;
-
 var plots3 = [];
 var tiberius = [];
+var circleNum = 0;
 
 $(document).ready(function() {
     console.log("document is ready");
@@ -17,10 +17,10 @@ $(document).ready(function() {
 });
 
 $("#markerSlider1").bind("slider:changed", function() {
-    var value = this.value;
+    value = this.value;
+    circleNum = value;
     document.getElementById("dateShower").innerHTML = dates[value];
     slideChanged(value);
-    writeSentences(value);
 });
 
 function slideChanged(value) {
@@ -45,6 +45,8 @@ function slideChanged(value) {
         }
     }
 }
+
+
 
 function initialize() {
 
@@ -121,17 +123,28 @@ function showMenu()
 
 }
 
-function cellClicked(element)
+function showModal(circleElement, number)
+{
+  console.log(number);
+  var emperorName = circleElement.getAttribute("name");
+  document.getElementById("modalTitle").innerHTML = emperorName;
+  document.getElementById("dynamicText").innerHTML = chooseSentence(emperorName, number);
+}
+
+function cellClicked(element, circleID)
 {
 
     var emperorName = element.getAttribute("name");
+    var circle = document.getElementById(circleID);
     console.log(emperorName);
     var colorActive = emperorArray[emperorName].active;
     if(colorActive == false)
     {
+
         element.className = emperorArray[emperorName].color;
         emperorArray[emperorName].active = true;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:1.0});
+        circle.disabled = false;
     }
 
     else if (colorActive == true)
@@ -140,5 +153,6 @@ function cellClicked(element)
         emperorArray[emperorName].color
         emperorArray[emperorName].active = false;
         emperorArray[emperorName].Polyline.setOptions({strokeOpacity:0});
+        circle.disabled = true;
     }
 }

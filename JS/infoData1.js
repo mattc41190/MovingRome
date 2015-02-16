@@ -1,6 +1,6 @@
 function getPompeyData(pompeyData)
 {
-	pompeyData.push(null)// 01/08
+	pompeyData.push("Pompey has not yet been introduced")// 01/08
 	pompeyData.push(null)
 	pompeyData.push(null) // 01/10 Rubicon
 	pompeyData.push(null)
@@ -110,107 +110,107 @@ function getPompeyData(pompeyData)
 
 function getCeasarData(ceasarData)
 {
-var ceasarData = [null //
-,null
-,"On January 10th Ceasar and his legions cors the Rubicon headed for Rome." //
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,"Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*"
-,"Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*"
-,"Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*"
-,"Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*"
-,null
-,null
-,null
-,null
-,null
-,"Ceasar pursues Pompey and the fleaing senate.*"
-,"Ceasar pursues Pompey and the fleaing senate.*"
-,"Ceasar pursues Pompey and the fleaing senate.*"
-,"Ceasar pursues Pompey and the fleaing senate.*"
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,null
-,"Ceasar misses Pompey ar Brindisi" /*last day  04/17/49 BC*/]
+ceasarData.push("Ceasar has not yet been introduced")
+ceasarData.push(null)
+ceasarData.push("On January 10th Ceasar and his legions cors the Rubicon headed for Rome.")//
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push("Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*")
+ceasarData.push("Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*")
+ceasarData.push("Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*")
+ceasarData.push("Ceasar arrives in Rome to find it abandoned by Pompey and the senate.*")
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push("Ceasar pursues Pompey and the fleaing senate.*")
+ceasarData.push("Ceasar pursues Pompey and the fleaing senate.*")
+ceasarData.push("Ceasar pursues Pompey and the fleaing senate.*")
+ceasarData.push("Ceasar pursues Pompey and the fleaing senate.*")
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push(null)
+ceasarData.push("Ceasar misses Pompey ar Brindisi")
 }
 
 var data3 =
@@ -265,28 +265,25 @@ null
 ,"data 4 index21"
 ]
 
-function writeSentences()
+function chooseSentence(emperor, num)
 {
-	for (emperor in emperorArray)
-	{
-		var sentence = emperorArray[emperor].data[value]
-		console.log(sentence);
-		if (emperorArray[emperor].active == false || sentence  == null)
+		var sentence = emperorArray[emperor].data[num];
+		if (sentence == null)
 		{
-			document.getElementById("dynamicText1").innerHTML = '';
-			document.getElementById("green_circle").style.opacity = "0";
-			document.getElementById("green_circle").style.height = "0px";
-			document.getElementById("green_circle").style.width = "0px";
+			for (i = num; i >= 0; i--)
+			{
+				if( emperorArray[emperor].data[i] !=  null)
+				{
+					sentence = emperorArray[emperor].data[i];
+					return sentence
+				}
+			}
 		}
 
 		else
 		{
-			document.getElementById("dynamicText1").innerHTML = sentence;
-			document.getElementById("green_circle").style.opacity = "1";
-			document.getElementById("green_circle").style.height = "35px";
-			document.getElementById("green_circle").style.width = "35px";
+			return sentence
 		}
-	}
 }
 
 		// function writeSentence1()

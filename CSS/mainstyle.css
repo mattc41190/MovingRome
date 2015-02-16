@@ -9,7 +9,7 @@
 
 .flyoutMenu
 {
-	height:600px; 
+	height:600px;
 	width:250px;
 	background-color: #3F444A;
 	position: fixed;
@@ -31,8 +31,8 @@
 
 
 
-#map-canvas 
-{ 
+#map-canvas
+{
 	margin-left: auto;
 	margin-right: auto;
 	height: 99%;
@@ -41,8 +41,8 @@
 
 }
 
-#map-canvas-tool 
-{ 
+#map-canvas-tool
+{
 	margin-left: auto;
 	margin-right: auto;
 	height: 450px;
@@ -63,7 +63,7 @@
 
 #green_circle
 {
-	margin-top: 10px;	
+	margin-top: 10px;
 	width: 35px;
 	height: 35px;
 	border-radius: 99px;
@@ -79,11 +79,13 @@
 	height: 35px;
 	border-radius: 99px;
 	background-color: #bd362f;
+	margin-right: 3px;
 
 }
 
 #blue_circle
 {
+	margin-top: 10px;
 	width: 35px;
 	height: 35px;
 	border-radius: 99px;
@@ -94,6 +96,7 @@
 
 #yellow_circle
 {
+	margin-top: 10px;
 	width: 35px;
 	height: 35px;
 	border-radius: 99px;
