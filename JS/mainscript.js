@@ -8,16 +8,12 @@ var tiberius = [];
 var circleNum = 0;
 
 $(document).ready(function() {
-    console.log("document is ready");
     document.getElementById("dateShower").innerHTML = dates[0];
-    // for(emperor in emperorArray)
-    // {
-    //   console.log(emperorArray[emperor].dates);
-    // }
-    destinations1.push(pompey.locations[0]);
-    destinations2.push(ceasar.locations[0]);
-    destinations3.push(plots3[0]);
-    destinations4.push(tiberius[0]);
+    for(emperor in emperorArray)
+    {
+      var currentEmperor = emperorArray[emperor]
+      currentEmperor.destinations.push(currentEmperor.locations[0]);
+    }
 });
 
 $("#markerSlider1").bind("slider:changed", function() {
@@ -28,16 +24,14 @@ $("#markerSlider1").bind("slider:changed", function() {
 });
 
 function slideChanged(value) {
-
-    var currentLength = destinations1.length;
     if(value >= destinations1.length)
     {
     while(value >= destinations1.length) {
-            var x  = destinations1.length;
-            destinations1.push(pompey.locations[x])
-            destinations2.push(ceasar.locations[x])
-            destinations3.push(plots3[x])
-            destinations4.push(tiberius[x])
+            var lengthVal  = destinations1.length;
+            destinations1.push(pompey.locations[lengthVal])
+            destinations2.push(ceasar.locations[lengthVal])
+            destinations3.push(plots3[lengthVal])
+            destinations4.push(tiberius[lengthVal])
             }
     }
     else if (value < destinations1.length) {

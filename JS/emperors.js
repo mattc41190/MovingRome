@@ -4,6 +4,7 @@ function makeEmperor(firstName, LastName, destinations, times, color, active, da
         firstName: firstName,
     lastName: LastName,
     times: times,
+    destinations: destinations,
     color: color,
     active: active,
     data: data,
@@ -21,7 +22,7 @@ getPompeyData(pompeyData)
 getPompeyLocations(pompeyLocations)
 //this looks the same as the last time you had but it will ensure that you always have the same properties in each emperor object
 var pompey = makeEmperor(
-			"Gneus",
+			"Gneaus",
 			"Pompey",
       destinations1,
 			dates,
