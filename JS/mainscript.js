@@ -8,7 +8,7 @@ var tiberius = [];
 var circleNum = 0;
 
 $(document).ready(function() {
-    document.getElementById("dateShower").innerHTML = dates[0];
+  document.getElementById("dateShower").setAttribute("value", dates[0]);
     for(emperor in emperorArray)
     {
       var currentEmperor = emperorArray[emperor]
@@ -19,11 +19,11 @@ $(document).ready(function() {
 $('input[type="range"]').rangeslider({
     polyfill: false,
 });
-$(document).on('input', 'input[type="range"]', function(e){ 
+$(document).on('input', 'input[type="range"]', function(e){
 value = e.target.value;
 circleNum = value;
-document.getElementById("dateShower").innerHTML = dates[value];
-slideChanged(value); 
+document.getElementById("dateShower").setAttribute("value", dates[value]);
+slideChanged(value);
 });
 
 

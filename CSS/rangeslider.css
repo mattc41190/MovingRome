@@ -3,7 +3,7 @@
   background: #808080;
   display: inline-block;
   height: 10px;
-  width: 70%;
+  width: 80%;
   -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -34,10 +34,10 @@
   border: 1px solid #ccc;
   cursor: pointer;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  top: -5px;
+  top: -7.5px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
   background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));

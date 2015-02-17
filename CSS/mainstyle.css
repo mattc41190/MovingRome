@@ -44,6 +44,15 @@
 #dateShower
 {
 	display: inline-block;
+	color:white;
+	border: transparent;
+	border-radius:5px;
+	background-color: rgba(0, 0, 0, 0)
+}
+
+#dateButton
+{
+	display: inline-block;
 }
 
 
