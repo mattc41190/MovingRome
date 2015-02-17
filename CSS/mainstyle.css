@@ -1,12 +1,3 @@
-
-#test
-{
-	background-color: purple;
-	height: 30px;
-	width: 30;
-	opacity: 0;
-}
-
 .flyoutMenu
 {
 	height:600px;
@@ -50,16 +41,11 @@
 
 }
 
-
-#markerSlider1
-{
-	position: fixed;
-}
-
 #dateShower
 {
-	vertical-align: top;
+	display: inline-block;
 }
+
 
 #green_circle
 {

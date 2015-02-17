@@ -16,6 +16,18 @@ $(document).ready(function() {
     }
 });
 
+$('input[type="range"]').rangeslider({
+    polyfill: false,
+});
+$(document).on('input', 'input[type="range"]', function(e){ 
+value = e.target.value;
+circleNum = value;
+document.getElementById("dateShower").innerHTML = dates[value];
+slideChanged(value); 
+});
+
+
+
 $("#markerSlider1").bind("slider:changed", function() {
     value = this.value;
     circleNum = value;

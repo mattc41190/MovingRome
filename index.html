@@ -2,7 +2,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="./CSS/slatetheme.css">
+<link rel="stylesheet" type="text/css" href="./CSS/rangeslider.css">
 <link rel="stylesheet" type="text/css" href="./CSS/mainstyle.css">
+
 <title>Moving Rome</title>
 </head>
 <body>
@@ -60,12 +62,15 @@
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <br>
-<!--       <div class="col-md-11"id="markerSliderContainer"><input type="text" id="markerSlider1" data-slider="true" data-slider-values="  0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
-            ,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100" data-slider-equal-steps="true" data-slider-snap="true" data-slider-theme="volume"> -->
-            <input type="range" name="slider-fill" id="slider-fill" value="0" min="0" max="100" data-highlight="true" />
+   
+
+            <div class="col-md-12">
+              <input  id="slider" type="range" min="0" step='1' max="100" value="0">
+              <span id="dateShower"></span>
+            </div>
 
       </div>
-      <span id= "dateShower"></span>
+
     </div>
   </nav>
 </body>
@@ -75,8 +80,8 @@
 <script src="./JS/ceasarLocations.js"></script>
 <script src="./JS/pompeyLocations.js"></script>
 <script src="./JS/emperors.js"></script>
-<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script src="./JS/rangeslider.min.js"></script>
 <script src="./JS/bootstrap.min.js"></script> <!-- personaljs -->
 <script src="./JS/mainScript.js"></script>	<!-- 	personaljs -->
 <script src="./JS/plots3.js"></script>
