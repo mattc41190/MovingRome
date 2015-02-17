@@ -1,5 +1,5 @@
 //this is a constructor for emperors. It will return an object with the given data.
-function makeEmperor(firstName, LastName, times, color, active, data, polylineOptions, locations) {
+function makeEmperor(firstName, LastName, destinations, times, color, active, data, polylineOptions, locations) {
     return {
         firstName: firstName,
     lastName: LastName,
@@ -23,6 +23,7 @@ getPompeyLocations(pompeyLocations)
 var pompey = makeEmperor(
 			"Gneus",
 			"Pompey",
+      destinations1,
 			dates,
 			"success",
       false,
@@ -45,6 +46,7 @@ getCeasarLocations(ceasarLocations)
 var ceasar = makeEmperor(
       "Julius",
       "Ceasar",
+      destinations2,
       dates,
       "danger",
       false,

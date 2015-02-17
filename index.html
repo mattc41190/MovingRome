@@ -5,80 +5,72 @@
 <link href="css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="./CSS/slatetheme.css">
 <link rel="stylesheet" type="text/css" href="./CSS/mainstyle.css">
+<title>Moving Rome</title>
 </head>
 <body>
-<div class="modal" id="myModal1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalTitle"></h4>
-      </div>
-      <div class="modal-body">
-        <h5>Most Recent Info: </h5>
-        <div id='dynamicText'></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<nav class="navbar navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./supportingFiles/menu.png"/></div>
-      </a>
+  <div class="modal" id="myModal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalTitle"></h4>
+        </div>
+        <div class="modal-body">
+          <h5>Most Recent Info: </h5>
+          <div id='dynamicText'></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./supportingFiles/menu.png"/></div>
+        </a>
         <button disabled  class="col-md-2 btn btn-success" name='Pompey'   id="green_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
         <button disabled class="col-md-2 btn btn-danger" name='Ceasar'    id="red_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
         <button disabled class="col-md-2 btn btn-info" name='Augustus'    id="blue_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
         <button disabled class="col-md-2 btn btn-warning" name='Tiberius' id="yellow_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
-    </div>
-
-            <ul class="nav navbar-nav navbar-right">
+      </div>
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="./coordinateTool.html">Contribute</a></li>
             <li><a href="./creatorInfo.html">Info</a></li>
         </ul>
-  </div>
-</nav>
-<br>
-<div class="flyoutMenu" id="fMenu">
-    </table>
-    <table class="table">
-    <table class="table table-hover">
-      <tr class="active" colorActive='false' name="Pompey" id="pompeyCell"    onclick="cellClicked(this,'green_circle')"><td class="cellText">Pompey</td></tr>
-      <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell"    onclick="cellClicked(this,'red_circle')"> <td class="cellText"   >Ceasar</td></tr>
-      <tr class="active" colorActive='false' name="Augustus" id="augustusCell"onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
-      <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell"onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
-    </table>
-  <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
-</div>
-<div class='container'>
+      </ul> <!--nav navbar-nav navbar-right -->
+    </div> <!--container-fluid -->
+  </nav> <!--navbar navbar-fixed-top -->
   <br>
-</div> <!-- container1 -->
-<div id="map-canvas"></div>
-		<div class='container'>
-			<div class='row'>
-				<br>
-			</div>
-		</div>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
-    <br>
+  <div class="flyoutMenu" id="fMenu">
+      <table class="table">
+      </table>
+      <table class="table table-hover">
+        <tr class="active" colorActive='false' name="Pompey" id="pompeyCell"    onclick="cellClicked(this,'green_circle')"><td class="cellText">Pompey</td></tr>
+        <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell"    onclick="cellClicked(this,'red_circle')"> <td class="cellText"   >Ceasar</td></tr>
+        <tr class="active" colorActive='false' name="Augustus" id="augustusCell"onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
+        <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell"onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
+      </table>
+    <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
+  </div> <!-- flyoutMenu -->
+  <div id="map-canvas"></div>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <br>
       <div class="col-md-11"id="markerSliderContainer"><input type="text" id="markerSlider1" data-slider="true" data-slider-values="  0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
-          ,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100" data-slider-equal-steps="true" data-slider-snap="true" data-slider-theme="volume"></div>
-          <span id= "dateShower"></span>
+            ,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100" data-slider-equal-steps="true" data-slider-snap="true" data-slider-theme="volume">
       </div>
-
-</nav>
+      <span id= "dateShower"></span>
+    </div>
+  </nav>
 </body>
 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vd5oA88NdzuspAiLxOFWkpQje3lYfX4"></script> <!-- mapsjs -->
 <script src="./JS/dateStrings.js"></script>
-<script src="./JS/PersonClass.js"></script>
 <script src="./JS/infoData1.js"></script>
 <script src="./JS/ceasarLocations.js"></script>
 <script src="./JS/pompeyLocations.js"></script>

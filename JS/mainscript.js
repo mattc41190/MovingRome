@@ -10,6 +10,10 @@ var circleNum = 0;
 $(document).ready(function() {
     console.log("document is ready");
     document.getElementById("dateShower").innerHTML = dates[0];
+    // for(emperor in emperorArray)
+    // {
+    //   console.log(emperorArray[emperor].dates);
+    // }
     destinations1.push(pompey.locations[0]);
     destinations2.push(ceasar.locations[0]);
     destinations3.push(plots3[0]);
