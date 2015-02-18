@@ -6,6 +6,7 @@ var polyLine4, polyLineOption4;
 var plots3 = [];
 var tiberius = [];
 var circleNum = 0;
+var menuShown = true;
 
 $(document).ready(function() {
   document.getElementById("dateShower").setAttribute("value", dates[0]);
@@ -26,14 +27,6 @@ document.getElementById("dateShower").setAttribute("value", dates[value]);
 slideChanged(value);
 });
 
-
-
-$("#markerSlider1").bind("slider:changed", function() {
-    value = this.value;
-    circleNum = value;
-    document.getElementById("dateShower").innerHTML = dates[value];
-    slideChanged(value);
-});
 
 function slideChanged(value) {
     if(value >= destinations1.length)
@@ -112,7 +105,7 @@ google.maps.event.trigger(map, "resize");
  map.setCenter(center);
 });
 
-var menuShown = true
+
 function showMenu()
 {
     console.log("clickedMenu");
