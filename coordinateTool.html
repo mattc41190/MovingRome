@@ -8,20 +8,38 @@
 
 
 <body>
-
-<h3>Coordinate tool</h3>
-<h5>Click spots and record lat-lons</h5>    
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+		<button class='btn btn-info'><h5>Options</h5></button>
+		<button class='btn btn-info'><h5>Insert Below</h5></button>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./index.html">Map</a></li>
+            <li><a href="./creatorInfo.html">Info</a></li>
+        </ul>
+      </ul> <!--nav navbar-nav navbar-right -->
+    </div> <!--container-fluid -->
+  </nav> <!--navbar navbar-fixed-top --> 
 <br>
-<h5><a href="./index.html">Map</a></h5>
 <!-- <p id ='numberPoints'></p> -->
-<br>
-<br>
-<div id="map-canvas-tool"></div>
-<br>
-<br>
-<div id="latLongList">
-</div>
+<div class="flyoutMenu" id="fMenuTool">
+      <table class="table">
+      </table>
+      <table class="table table-hover">
+        <div id="latLongList"></div>
+      </table>
+    <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
+ </div> <!-- flyoutMenu -->
 
+<!-- <div>Click spots on the map to generate a route.</div>
+<div>Proposed list of dates and locations for: <div id="chosenName"></div></div> -->
+
+</div>
+<div id="map-canvas-tool"></div>
 </body>
 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vd5oA88NdzuspAiLxOFWkpQje3lYfX4"></script>
 <script src="./CoordinateJS/jquery-2.1.1.js"></script>

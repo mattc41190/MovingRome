@@ -9,6 +9,13 @@
 
 }
 
+#fMenuTool
+{
+	height:700px;
+	width:575px;
+	overflow: scroll;
+}
+
 .cellText
 {
 	text-align: center;
@@ -36,8 +43,9 @@
 {
 	margin-left: auto;
 	margin-right: auto;
-	height: 450px;
+	height: 99%;
 	width: 100%;
+	position: absolute;
 
 }
 

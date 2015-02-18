@@ -3,6 +3,7 @@
 // once its path property contains two LatLng coordinates.
 
 var poly;
+var destinations = new google.maps.MVCArray();
 var map;
 
 function initialize() {
@@ -35,7 +36,7 @@ function addLatLng(event) {
 
   var path = poly.getPath();
   var stringLatLng = event.latLng.toString();
-  document.getElementById('latLongList').innerHTML += '<br>.push(new google.maps.LatLng'+stringLatLng+')';
+  document.getElementById('latLongList').innerHTML += "<tr class='active' ><td><input type='checkbox'/>.push(new google.maps.LatLng"+stringLatLng+")</td></tr>";
   console.log(event.latLng.toString());
 
   // Because path is an MVCArray, we can simply append a new coordinate
@@ -52,13 +53,4 @@ function addLatLng(event) {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-for (i = 0; i <=100 ; i++)
-{
-  if(i == 50)
-  {
-    {document.getElementById("numberPoints").innerHTML += ("<br>," + i)} 
-  }
-  else
-    {document.getElementById("numberPoints").innerHTML += ("," + i)} 
-}
 
