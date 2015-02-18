@@ -20,33 +20,34 @@ $(document).ready(function() {
 $('input[type="range"]').rangeslider({
     polyfill: false,
 });
+
 $(document).on('input', 'input[type="range"]', function(e){
-value = e.target.value;
-circleNum = value;
-document.getElementById("dateShower").setAttribute("value", dates[value]);
-slideChanged(value);
-});
+  value = e.target.value;
+  circleNum = value;
+  document.getElementById("dateShower").setAttribute("value", dates[value]);
+  slideChanged(value);
+  });
 
 
-function slideChanged(value) {
-    if(value >= destinations1.length)
-    {
-    while(value >= destinations1.length) {
-            var lengthVal  = destinations1.length;
-            destinations1.push(pompey.locations[lengthVal])
-            destinations2.push(ceasar.locations[lengthVal])
-            destinations3.push(plots3[lengthVal])
-            destinations4.push(tiberius[lengthVal])
-            }
-    }
-    else if (value < destinations1.length) {
-        while(value < destinations1.length -1) {
-            destinations1.pop()
-            destinations2.pop()
-            destinations3.pop()
-            destinations4.pop()
-        }
-    }
+  function slideChanged(value) {
+      if(value >= destinations1.length)
+      {
+      while(value >= destinations1.length) {
+              var lengthVal  = destinations1.length;
+              destinations1.push(pompey.locations[lengthVal])
+              destinations2.push(ceasar.locations[lengthVal])
+              destinations3.push(plots3[lengthVal])
+              destinations4.push(tiberius[lengthVal])
+              }
+      }
+      else if (value < destinations1.length) {
+          while(value < destinations1.length -1) {
+              destinations1.pop()
+              destinations2.pop()
+              destinations3.pop()
+              destinations4.pop()
+          }
+      }
 }
 
 
