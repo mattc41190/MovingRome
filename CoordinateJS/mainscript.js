@@ -1,6 +1,6 @@
-var poly;
+var poly, map;
+var markers = [];
 var destinations = new google.maps.MVCArray();
-var map;
 
 function initialize() {
   var mapOptions = {
@@ -33,20 +33,41 @@ function addLatLng(event) {
 
   var path = poly.getPath();
   var stringLatLng = event.latLng.toString();
+
+
   document.getElementById('latLongList').innerHTML +=
-  "<tr><td class='danger'><input type='checkbox'/></td><td class='active' >DateArea: "+stringLatLng+"</td></tr>";
+  "<tr><td class='danger'> <span class='remove'>X</span></td><td class='active' >DateArea: "+stringLatLng+"</td></tr>";
   console.log(event.latLng.toString());
 
   // Because path is an MVCArray, we can simply append a new coordinate
   // and it will automatically appear.
   path.push(event.latLng);
 
+
   // Add a new marker at the new plotted point on the polyline.
   var marker = new google.maps.Marker({
     position: event.latLng,
     title: '#' + event.latLng,
-    map: map
+    map: map,
+    draggable: true
   });
+  markers.push(marker);
+
+  google.maps.event.addListener(marker, 'click', function() {
+    marker.setMap(null);
+    for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
+    markers.splice(i, 1);
+    destinations.removeAt(i);
+    }
+  );
+
+  google.maps.event.addListener(marker, 'dragend', function() {
+    for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
+    destinations.setAt(i, marker.getPosition());
+
+    }
+  );
+
 }
 
 function removeLatLng() {

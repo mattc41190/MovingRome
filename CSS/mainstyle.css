@@ -1,3 +1,20 @@
+::-webkit-scrollbar {
+		width: 12px;
+}
+::-webkit-scrollbar-track {
+		background-color: #3F444A;
+		border-left: 1px solid #3F444A;
+}
+::-webkit-scrollbar-thumb {
+		background-color: #999999;
+		opacity: 0.5
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #999999;
+	opacity: 0.5
+}
+
+
 .flyoutMenu
 {
 	height:600px;
