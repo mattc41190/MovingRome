@@ -26,10 +26,6 @@ function initialize() {
   google.maps.event.addListener(map, 'click', addLatLng);
 }
 
-/**
- * Handles click events on a map, and adds a new point to the Polyline.
- * @param {google.maps.MouseEvent} event
- */
 function addLatLng(event) {
 
   var path = poly.getPath();
@@ -38,10 +34,7 @@ function addLatLng(event) {
     "'class='remove'</input></td><td class='active' >DateArea: "+stringLatLng+
     "</td></tr>");
   document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
-  
 
-  // Because path is an MVCArray, we can simply append a new coordinate
-  // and it will automatically appear.
   path.push(event.latLng);
 
 
@@ -71,11 +64,16 @@ function addLatLng(event) {
 
 
   google.maps.event.addListener(marker, 'dragend', function() {
-    for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
+    var i = markers.indexOf(marker);
     destinations.setAt(i, marker.getPosition());
     newLocation = marker.getPosition().toString();
-    console.log(newLocation);
-    marker.setTitle("tet!");
+    marker.setTitle(newLocation);
+    dateLocationsOutput[i] = "<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
+    "'class='remove'</input></td><td class='active' >DateArea: "+newLocation+
+    "</td></tr>";
+    document.getElementById('latLongList').innerHTML = dateLocationsOutput.join(""); 
+
+
 
     }
   );
