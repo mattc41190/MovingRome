@@ -1,7 +1,3 @@
-// This example creates an interactive map which constructs a
-// polyline based on user clicks. Note that the polyline only appears
-// once its path property contains two LatLng coordinates.
-
 var poly;
 var destinations = new google.maps.MVCArray();
 var map;
@@ -17,6 +13,7 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas-tool'), mapOptions);
 
   var polyOptions = {
+    path: destinations,
     strokeColor: '#000000',
     strokeOpacity: 1.0,
     strokeWeight: 3
@@ -50,6 +47,13 @@ function addLatLng(event) {
     title: '#' + event.latLng,
     map: map
   });
+}
+
+function removeLatLng() {
+
+  var path = poly.getPath();
+  path.pop();
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
