@@ -1,5 +1,6 @@
 var poly, map;
 var markers = [];
+var dateLocationsOutput = [];
 var destinations = new google.maps.MVCArray();
 
 function initialize() {
@@ -33,11 +34,11 @@ function addLatLng(event) {
 
   var path = poly.getPath();
   var stringLatLng = event.latLng.toString();
-
-
-  document.getElementById('latLongList').innerHTML +=
-  "<tr><td class='danger'> <span class='remove'>X</span></td><td class='active' >DateArea: "+stringLatLng+"</td></tr>";
-  console.log(event.latLng.toString());
+  dateLocationsOutput.push("<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
+    "'class='remove'</input></td><td class='active' >DateArea: "+stringLatLng+
+    "</td></tr>");
+  document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
+  
 
   // Because path is an MVCArray, we can simply append a new coordinate
   // and it will automatically appear.
@@ -56,26 +57,31 @@ function addLatLng(event) {
 
   google.maps.event.addListener(marker, 'click', function() {
     marker.setMap(null);
-    for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
-    markers.splice(i, 1);
-    destinations.removeAt(i);
+    var i = markers.indexOf(marker);
+    if(i >= 0)
+    {
+      markers.splice(i,1);
+      destinations.removeAt(i);
+      dateLocationsOutput.splice(i,1);
+      document.getElementById('latLongList').innerHTML = dateLocationsOutput.join(""); 
     }
-  );
+  });
+
+
+
 
   google.maps.event.addListener(marker, 'dragend', function() {
     for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
     destinations.setAt(i, marker.getPosition());
+    newLocation = marker.getPosition().toString();
+    console.log(newLocation);
+    marker.setTitle("tet!");
 
     }
   );
 
 }
 
-function removeLatLng() {
 
-  var path = poly.getPath();
-  path.pop();
-
-}
 
 google.maps.event.addDomListener(window, 'load', initialize);
