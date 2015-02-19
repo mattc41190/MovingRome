@@ -11,10 +11,19 @@
 
 #fMenuTool
 {
-	height:700px;
-	width:575px;
-	overflow: scroll;
+	height:99%;
+	width:500px;
+
 }
+
+#tableContainer
+{
+	height:550px;
+	border-bottom: 1px solid black;
+	overflow: scroll;
+	overflow-x:hidden;
+}
+
 
 .cellText
 {

@@ -11,8 +11,7 @@
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-		<button class='btn btn-info'><h5>Options</h5></button>
-		<button class='btn btn-info'><h5>Insert Below</h5></button>
+
       </div>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -23,20 +22,40 @@
         </ul>
       </ul> <!--nav navbar-nav navbar-right -->
     </div> <!--container-fluid -->
-  </nav> <!--navbar navbar-fixed-top --> 
+  </nav> <!--navbar navbar-fixed-top -->
 <br>
 <!-- <p id ='numberPoints'></p> -->
 <div class="flyoutMenu" id="fMenuTool">
       <table class="table">
       </table>
-      <table class="table table-hover">
-        <div id="latLongList"></div>
+      <div id='tableContainer'>
+      <table class="table table-hover" id="latLongList">
       </table>
-    <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
- </div> <!-- flyoutMenu -->
 
-<!-- <div>Click spots on the map to generate a route.</div>
-<div>Proposed list of dates and locations for: <div id="chosenName"></div></div> -->
+    </div> <!-- tableContainer -->
+    <div class='container' id='optionsContainer'>
+      <h3>Options:</h3>
+      <div class="row>">
+        <button class='btn btn-danger'>Delete</button>
+        <button class='btn btn-info'>Insert</button>
+        <button class='btn btn-warning'>Extend</button>
+        <button class='btn btn-success'>Submit</button>
+      <!-- <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Person
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pompey</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ceasar</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Augustus</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tiberius</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Suggest Person</a></li>
+        </ul>
+      </div> -->
+
+    </div>
+  </div> <!--row -->
+ </div> <!-- flyoutMenu -->
 
 </div>
 <div id="map-canvas-tool"></div>
