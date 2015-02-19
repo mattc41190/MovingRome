@@ -53,6 +53,7 @@ function addLatLng(event) {
   });
   markers.push(marker);
 
+
   google.maps.event.addListener(marker, 'click', function() {
     marker.setMap(null);
     for (var i = 0, I = markers.length; i < I && markers[i] != marker; ++i);
