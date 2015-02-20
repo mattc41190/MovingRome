@@ -3,6 +3,8 @@ var markers = [];
 var dateLocationsOutput = [];
 var destinations = new google.maps.MVCArray();
 
+
+
 function initialize() {
   var mapOptions = {
     zoom: 5,
@@ -26,13 +28,37 @@ function initialize() {
 }
 
 function addLatLng(event) {
-// Add new <tr> to #latLongList
+// Add new <tr> to #latLongList and addListner to it
   var stringLatLng = event.latLng.toString();
-  dateLocationsOutput.push("<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
-    "'class='remove'</input></td><td class='active' >DateArea: "+stringLatLng+
+  var currentRowButtonId;
+
+  function changeTruth()
+  {
+
+  }
+
+  if(something is true)
+  {
+
+  }
+  else if(nothing is false)
+  {
+
+  }
+
+  for (var i = 0; i =< dateLocationsOutput.length; i++ )
+  {
+    if(i == dateLocationsOutput.length)
+    {
+      currentRowButtonId = "rowBtn" + i;
+    }
+  }
+
+  dateLocationsOutput.push("<tr><td class='danger'> <button id='"+currentRowButtonId+
+    "'class='remove'</button></td><td class='active' >DateArea: "+stringLatLng+
     "</td></tr>");
   document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
-
+  document.getElementById(currentRowButtonId).addEventListener("click", changeTruth);
 // Add new polyline point at point of 'click' event
   destinations.push(event.latLng);
 
