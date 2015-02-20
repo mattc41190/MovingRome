@@ -4,12 +4,9 @@ var dateLocationsOutput = [];
 var destinations = new google.maps.MVCArray();
 
 function initialize() {
-
-
   var mapOptions = {
     zoom: 5,
     disableDoubleClickZoom : true,
-    // Center the map on Chicago, USA.
     center: new google.maps.LatLng(40.622291783092706, 17.91046142578125)
   };
 
@@ -29,18 +26,17 @@ function initialize() {
 }
 
 function addLatLng(event) {
-
-  var path = poly.getPath();
+// Add new <tr> to #latLongList
   var stringLatLng = event.latLng.toString();
   dateLocationsOutput.push("<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
     "'class='remove'</input></td><td class='active' >DateArea: "+stringLatLng+
     "</td></tr>");
   document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
 
-  path.push(event.latLng);
+// Add new polyline point at point of 'click' event
+  destinations.push(event.latLng);
 
-
-  // Add a new marker at the new plotted point on the polyline.
+// Add a new marker at the new plotted point on the polyline.
   var marker = new google.maps.Marker({
     position: event.latLng,
     title: '#' + event.latLng,
@@ -49,7 +45,7 @@ function addLatLng(event) {
   });
   markers.push(marker);
 
-
+// Add a 'click' listener to this newly placed marker (every marker gets its own click listener)
   google.maps.event.addListener(marker, 'click', function() {
     marker.setMap(null);
     var i = markers.indexOf(marker);
@@ -62,9 +58,7 @@ function addLatLng(event) {
     }
   });
 
-
-
-
+// Add a 'dragend' listener to this newly placed marker (every marker gets its own dragend listener)
   google.maps.event.addListener(marker, 'dragend', function() {
     var i = markers.indexOf(marker);
     destinations.setAt(i, marker.getPosition());
@@ -74,23 +68,20 @@ function addLatLng(event) {
     "'class='remove'</input></td><td class='active' >DateArea: "+newLocation+
     "</td></tr>";
     document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
-
-
-
     }
   );
-
-
-
 }
+// addLatLng function ends here
 
 
+// Create a method of clearing map of markers
 function setAllMap(map) {
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(map);
   }
 }
 
+// Use setAllMap function and set all array to empty to clear map.
 function clearAll()
 {
   setAllMap(null);
@@ -99,5 +90,7 @@ function clearAll()
   destinations.clear();
   document.getElementById('latLongList').innerHTML = dateLocationsOutput;
 }
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
