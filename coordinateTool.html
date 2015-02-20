@@ -8,6 +8,22 @@
 
 
 <body>
+  <div class="modal" id="coordToolModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalTitle">Please Copy These Results:</h4>
+        </div>
+        <div class="modal-body">
+          <div id='coorToolText'></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -36,22 +52,10 @@
     <div class='container' id='optionsContainer'>
       <h3>Options:</h3>
       <div class="row>">
-        <button class='btn btn-danger' onclick="removeLatLng()">Delete</button>
+        <button class='btn btn-danger' onclick="clearAll()">Clear All</button>
         <button class='btn btn-info'>Insert</button>
         <button class='btn btn-warning'>Extend</button>
-        <button class='btn btn-success'>Submit</button>
-      <!-- <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Person
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pompey</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ceasar</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Augustus</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tiberius</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Suggest Person</a></li>
-        </ul>
-      </div> -->
+        <button class='btn btn-success'  data-toggle="modal" data-target="#coordToolModal">Submit</button>
 
     </div>
   </div> <!--row -->

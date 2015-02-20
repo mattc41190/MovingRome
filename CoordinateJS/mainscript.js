@@ -4,6 +4,8 @@ var dateLocationsOutput = [];
 var destinations = new google.maps.MVCArray();
 
 function initialize() {
+
+
   var mapOptions = {
     zoom: 5,
     disableDoubleClickZoom : true,
@@ -56,7 +58,7 @@ function addLatLng(event) {
       markers.splice(i,1);
       destinations.removeAt(i);
       dateLocationsOutput.splice(i,1);
-      document.getElementById('latLongList').innerHTML = dateLocationsOutput.join(""); 
+      document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
     }
   });
 
@@ -71,15 +73,31 @@ function addLatLng(event) {
     dateLocationsOutput[i] = "<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
     "'class='remove'</input></td><td class='active' >DateArea: "+newLocation+
     "</td></tr>";
-    document.getElementById('latLongList').innerHTML = dateLocationsOutput.join(""); 
+    document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
 
 
 
     }
   );
 
+
+
 }
 
 
+function setAllMap(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+function clearAll()
+{
+  setAllMap(null);
+  markers = [];
+  dateLocationsOutput = [];
+  destinations.clear();
+  document.getElementById('latLongList').innerHTML = dateLocationsOutput;
+}
 
 google.maps.event.addDomListener(window, 'load', initialize);
