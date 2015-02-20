@@ -3,7 +3,7 @@ var destinations3 = new google.maps.MVCArray();
 var destinations4 = new google.maps.MVCArray();
 var polyLine3, polyLineOptions3;
 var polyLine4, polyLineOption4;
-var plots3 = [];
+var augustus = [];
 var tiberius = [];
 var circleNum = 0;
 var menuShown = true;
@@ -36,7 +36,7 @@ $(document).on('input', 'input[type="range"]', function(e){
               var lengthVal  = destinations1.length;
               destinations1.push(pompey.locations[lengthVal])
               destinations2.push(ceasar.locations[lengthVal])
-              destinations3.push(plots3[lengthVal])
+              destinations3.push(augustus[lengthVal])
               destinations4.push(tiberius[lengthVal])
               }
       }
