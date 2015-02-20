@@ -4,10 +4,10 @@
 <link rel="stylesheet" type="text/css" href="./CSS/slatetheme.css">
 <link rel="stylesheet" type="text/css" href="./CSS/rangeslider.css">
 <link rel="stylesheet" type="text/css" href="./CSS/mainstyle.css">
-
 <title>Moving Rome</title>
 </head>
 <body>
+<!-- modal -->
   <div class="modal" id="myModal1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -25,16 +25,17 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+<!-- navbar -->
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
           <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./supportingFiles/menu.png"/></div>
         </a>
-        <button disabled  class="col-md-2 btn btn-success" name='Pompey'   id="green_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
-        <button disabled class="col-md-2 btn btn-danger" name='Ceasar'    id="red_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
-        <button disabled class="col-md-2 btn btn-info" name='Augustus'    id="blue_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
-        <button disabled class="col-md-2 btn btn-warning" name='Tiberius' id="yellow_circle"  data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled  class="col-md-2 col-xs-1 btn btn-success" name='Pompey' id="green_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 col-xs-1 btn btn-danger" name='Ceasar' id="red_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 col-xs-1 btn btn-info" name='Augustus' id="blue_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
+        <button disabled class="col-md-2 col-xs-1 btn btn-warning" name='Tiberius' id="yellow_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
       </div>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -42,38 +43,33 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="./coordinateTool.html">Contribute</a></li>
             <li><a href="./creatorInfo.html">Info</a></li>
-        </ul>
+         </ul> <!-- .dropdown-menu -->
       </ul> <!--nav navbar-nav navbar-right -->
     </div> <!--container-fluid -->
   </nav> <!--navbar navbar-fixed-top -->
-  <br>
+<!-- flyout -->
+<br>
   <div class="flyoutMenu" id="fMenu">
-      <table class="table">
-      </table>
       <table class="table table-hover">
-        <tr class="active" colorActive='false' name="Pompey" id="pompeyCell"    onclick="cellClicked(this,'green_circle')"><td class="cellText">Pompey</td></tr>
-        <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell"    onclick="cellClicked(this,'red_circle')"> <td class="cellText"   >Ceasar</td></tr>
-        <tr class="active" colorActive='false' name="Augustus" id="augustusCell"onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
-        <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell"onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
+        <tr class="active" colorActive='false' name="Pompey" id="pompeyCell" onclick="cellClicked(this,'green_circle')"><td class="cellText">Pompey</td></tr>
+        <tr class="active" colorActive='false' name="Ceasar" id="ceasarCell" onclick="cellClicked(this,'red_circle')"> <td class="cellText"   >Ceasar</td></tr>
+        <tr class="active" colorActive='false' name="Augustus" id="augustusCell" onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
+        <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell" onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
       </table>
     <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
   </div> <!-- flyoutMenu -->
+<!-- map -->
   <div id="map-canvas"></div>
+<!-- footer navbar -->
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-      <br>
-
-
-            <div class="col-md-12">
-              <input  id="slider" type="range" min="0" step='1' max="100" value="0">
-              <input type="text" size="8" value="" id="dateShower"></input>
-              <!-- <button id="dateButton" class="btn btn-primary">Go</button> -->
-            </div>
-
-      </div>
-
-    </div>
-  </nav>
+          <div class="col-md-12">
+            <input  id="slider" type="range" min="0" step='1' max="100" value="0">
+            <input type="text" size="8" value="" id="dateShower"></input>
+            <!-- <button id="dateButton" class="btn btn-primary">Go</button> -->
+          </div>
+      </div><!-- container -->
+  </nav><!-- footer navbar -->
 </body>
 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vd5oA88NdzuspAiLxOFWkpQje3lYfX4"></script> <!-- mapsjs -->
 <script src="./JS/dateStrings.js"></script>
