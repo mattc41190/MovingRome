@@ -1,8 +1,10 @@
 var poly, map;
 var markers = [];
+var rowButtons = [];
 var dateLocationsOutput = [];
 var destinations = new google.maps.MVCArray();
-
+var placingIntermediateMarker = false;
+var entryPoint = destinations.getLength();
 
 
 function initialize() {
@@ -32,35 +34,49 @@ function addLatLng(event) {
   var stringLatLng = event.latLng.toString();
   var currentRowButtonId;
 
-  function changeTruth()
-  {
+  console.log("The current entry point is: " + entryPoint);
 
+  function changeTruth(element)
+  {
+    console.log(element.id)
+    placingIntermediateMarker = true;
+    for(i in rowButtons)
+    {
+      if (rowButtons[i] != element.id)
+      {
+        document.getElementById(rowButtons[i]).setAttribute("disabled", "true");
+      }
+      else {
+        entryPoint = i;
+        console.log("The value of the entry point is now set to : " + entryPoint)
+      }
+    }
   }
 
-  if(something is true)
-  {
 
-  }
-  else if(nothing is false)
-  {
-
-  }
-
-  for (var i = 0; i =< dateLocationsOutput.length; i++ )
+  for (var i = 0; i <= dateLocationsOutput.length; i++ )
   {
     if(i == dateLocationsOutput.length)
     {
+      console.log(i);
       currentRowButtonId = "rowBtn" + i;
+      rowButtons.push(currentRowButtonId);
     }
   }
 
   dateLocationsOutput.push("<tr><td class='danger'> <button id='"+currentRowButtonId+
-    "'class='remove'</button></td><td class='active' >DateArea: "+stringLatLng+
+    "'class='btn btn-primary'><span class='caret'></span></button></td><td class='active' >DateArea: "+stringLatLng+
     "</td></tr>");
   document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
-  document.getElementById(currentRowButtonId).addEventListener("click", changeTruth);
+  for(i in dateLocationsOutput)
+  {
+    document.getElementById(rowButtons[i]).addEventListener('click', function(){changeTruth(this)});
+  }
+
 // Add new polyline point at point of 'click' event
-  destinations.push(event.latLng);
+  destinations.insertAt(entryPoint, event.latLng);
+  entryPoint = destinations.getLength();
+
 
 // Add a new marker at the new plotted point on the polyline.
   var marker = new google.maps.Marker({
@@ -81,6 +97,10 @@ function addLatLng(event) {
       destinations.removeAt(i);
       dateLocationsOutput.splice(i,1);
       document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
+      for(i in dateLocationsOutput)
+      {
+        document.getElementById(rowButtons[i]).addEventListener('click', function(){changeTruth(this)});
+      }
     }
   });
 
@@ -90,10 +110,14 @@ function addLatLng(event) {
     destinations.setAt(i, marker.getPosition());
     newLocation = marker.getPosition().toString();
     marker.setTitle(newLocation);
-    dateLocationsOutput[i] = "<tr><td class='danger'> <input type='checkbox' id='"+(dateLocationsOutput.length)+
-    "'class='remove'</input></td><td class='active' >DateArea: "+newLocation+
+    dateLocationsOutput[i] = "<tr><td class='danger'> <button id='"+currentRowButtonId+
+      "'class='btn btn-primary'><span class='caret'></span></button></td><td class='active' >DateArea: "+newLocation+
     "</td></tr>";
     document.getElementById('latLongList').innerHTML = dateLocationsOutput.join("");
+    for(i in dateLocationsOutput)
+    {
+      document.getElementById(rowButtons[i]).addEventListener('click', function(){changeTruth(this)});
+    }
     }
   );
 }
