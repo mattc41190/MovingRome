@@ -30,7 +30,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
-          <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./supportingFiles/menu.png"/></div>
+          <div class='col-md-1'><img alt="Brand" onclick="showMenu()" src="./MainApp/supportingFiles/menu.png"/></div>
         </a>
         <button disabled  class="col-md-2 col-xs-1 btn btn-success" name='Pompey' id="green_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
         <button disabled class="col-md-2 col-xs-1 btn btn-danger" name='Ceasar' id="red_circle" data-toggle="modal" data-target="#myModal1" onclick="showModal(this, circleNum)"></buton>
@@ -41,8 +41,8 @@
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="./coordinateTool.html">Contribute</a></li>
-            <li><a href="./creatorInfo.html">Info</a></li>
+            <li><a href="./CoordinateTool/coordinateTool.html">Contribute</a></li>
+            <li><a href="./OtherPages/creatorInfo.html">Info</a></li>
          </ul> <!-- .dropdown-menu -->
       </ul> <!--nav navbar-nav navbar-right -->
     </div> <!--container-fluid -->
@@ -56,7 +56,7 @@
         <tr class="active" colorActive='false' name="Augustus" id="augustusCell" onclick="cellClicked(this,'blue_circle')"><td class="cellText" >Augustus</td></tr>
         <tr class="active" colorActive='false' name="Tiberius" id="tiberiusCell" onclick="cellClicked(this,'yellow_circle')"><td class="cellText" >Tiberius</td></tr>
       </table>
-    <div id="backArrow"><img src="./supportingFiles/back_arrow.png" onclick='showMenu()'></div>
+    <div id="backArrow"><img src="./MainApp/supportingFiles/back_arrow.png" onclick='showMenu()'></div>
   </div> <!-- flyoutMenu -->
 <!-- map -->
   <div id="map-canvas"></div>
@@ -72,15 +72,15 @@
   </nav><!-- footer navbar -->
 </body>
 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vd5oA88NdzuspAiLxOFWkpQje3lYfX4"></script> <!-- mapsjs -->
-<script src="./JS/dateStrings.js"></script>
-<script src="./JS/infoData1.js"></script>
-<script src="./JS/ceasarLocations.js"></script>
-<script src="./JS/pompeyLocations.js"></script>
-<script src="./JS/emperors.js"></script>
+<script src="./MainApp/JS/dateStrings.js"></script>
+<script src="./MainApp/JS/infoData1.js"></script>
+<script src="./MainApp/JS/ceasarLocations.js"></script>
+<script src="./MainApp/JS/pompeyLocations.js"></script>
+<script src="./MainApp/JS/emperors.js"></script>
 <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-<script src="./JS/rangeslider.min.js"></script>
-<script src="./JS/bootstrap.min.js"></script> <!-- personaljs -->
-<script src="./JS/mainScript.js"></script>	<!-- 	personaljs -->
-<script src="./JS/plots3.js"></script>
-<script src="./JS/plots4.js"></script>
+<script src="./MainApp/JS/rangeslider.min.js"></script>
+<script src="./MainApp/JS/bootstrap.min.js"></script> <!-- personaljs -->
+<script src="./MainApp/JS/mainScript.js"></script>	<!-- 	personaljs -->
+<script src="./MainApp/JS/plots3.js"></script>
+<script src="./MainApp/JS/plots4.js"></script>
 </html>

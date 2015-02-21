@@ -2,8 +2,8 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="./CSS/slatetheme.css">
-<link rel="stylesheet" type="text/css" href="./CSS/mainstyle.css">
+<link rel="stylesheet" type="text/css" href="../CSS/slatetheme.css">
+<link rel="stylesheet" type="text/css" href="../CSS/mainstyle.css">
 </head>
 
 
@@ -14,7 +14,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="modalTitle">Please Copy These Results:</h4>
+          <h4 class="modal-title" id="modalTitle">Please Send Me These Results:</h4>
         </div>
         <div class="modal-body">
           <div id='coorToolText'></div>
@@ -34,8 +34,8 @@
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="./index.html">Map</a></li>
-            <li><a href="./creatorInfo.html">Info</a></li>
+            <li><a href="../index.html">Map</a></li>
+            <li><a href="../OtherPages/creatorInfo.html">Info</a></li>
         </ul>
       </ul> <!--nav navbar-nav navbar-right -->
     </div> <!--container-fluid -->
@@ -43,6 +43,7 @@
 <br>
 <!-- flyout -->
 <div class="flyoutMenu" id="fMenuTool">
+  <div id="instructionText"><h3>Click a spot on the map!</h3></div>
       <div id='tableContainer'>
         <table class="table table-hover" id="latLongList">
         </table>
@@ -60,7 +61,7 @@
 <div id="map-canvas-tool"></div>
 </body>
 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vd5oA88NdzuspAiLxOFWkpQje3lYfX4"></script>
-<script src="./CoordinateJS/jquery-2.1.1.js"></script>
-<script src="./CoordinateJS/bootstrap.js"></script>
-<script src="./CoordinateJS/mainScript.js"></script>
+<script src="./CoordinateToolJS/jquery-2.1.1.js"></script>
+<script src="./CoordinateToolJS/bootstrap.js"></script>
+<script src="./CoordinateToolJS/mainScript.js"></script>
 </html>
